@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <h1 class="text-center display-3 py-3">{{contact_title}}</h1>
+            <ul class="list-group mt-3">
+                {% for contact in contacts %}
+                <a href="{% url 'contact_detail' contact.id %}" class="list-group-item">
+                    
+                    <header class="d-flex justify-content-between">
+                        {% if contact.relevante %}
+                        <h1 class="fw-bold text-success">{{contact.nombre}}(relevante)</h1>
+                        {% else %}
+                        <h1 class="fw-bold">{{contact.nombre}}</h1>
+                        {% endif %}
+                        <p>{{contact.user.username}}</p>
+
+                    </header>
+                    <p>{{contact.descripcion}}</p>
+
+                    <p>{{contact.datecompleted|date:'M j Y H:i'}}</p>
+                    
+
+                
+                </a>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static './images/icon-whatsapp.png' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styleCategories.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <title>Contact Application</title>
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="hero__nav container">
+      <figure  class="hero__logo">
+        <img  src="{% static 'images/icons8-whatsapp.svg' %}" class="hero__wlogo" alt="logo">
+        <p class="hero__whatsapp">Whatsapp</p>
+      </figure>
+
+
+      <div class="hero__cta--container">
+        <a href="{% url 'home_contact' %}" class="hero__cta" >Contactos </a>
+      <a href="https://www.whatsapp.com/" class="hero__cta" target="_blank"> Pruébalo gratis</a>
+      </div>
+    </nav>
+
+    <section class="hero__main container">
+      <div class="hero__principle">
+        <div class="hero__texts">
+          <h1 class="hero__title">El Mundo Conectado por <span class="title__whatsapp">Whatsapp</span> </h1>
+          <p class="hero__paragraph"> 
+            WhatsApp revoluciona la comunicación global. Únete a millones en todo el mundo en mensajes instantáneos.Conecta con amigos, familiares y colegas en todo el mundo, fomentando la inclusión y el compromiso genuino. 
+          </p>
+          <div class="alinear-boton">
+            <a href="https://www.whatsapp.com/" class="cta" target="_blank">Pruébalo gratis aquí</a>  
+          </div>
+          
+      </div>
+
+      <figure class="hero__picture">
+
+        <img src="{% static 'images/chat-monochromatic.svg' %}" alt="foto" class="hero__img">
+
+      </figure>
+      </div>
+   
+
+      <div class="hero__numbers">
+        <div class="hero__item ">
+            <img src="{% static 'images/icon-communities.svg' %}" class="hero__icon" alt="imagen">
+            <div class="hero__alinear">
+            <h3 class="hero__number contador_cantidad ocultar " data-cantidad-total="2000">0</h3><span class="hero__unidad  ocultar ">+m</span>
+
+            </div>
+            <p class="hero__community">Usuarios Activos</p>
+        </div>
+
+        <div class="hero__item ">
+          <img src="{% static 'images/icon-messages.svg' %}" class="hero__icon" alt="imagen">
+          <div class="hero__alinear">
+          <h3 class="hero__number contador_cantidad ocultar  " data-cantidad-total="100000">0</h3><span class="hero__unidad  ocultar ">+m</span>
+
+          </div>
+          <p class="hero__community">  Mensajes Enviados Al Día</p>
+      </div>
+      </div>
+
+    </section>
+
+    <div class="wave wave--bottom"></div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="section__container container">
+        <figure class="section__picture">
+          <img src="{% static 'images/video-call-monochromatic-3b09b.svg' %}" class="section__img" alt="imagen">
+        </figure>
+        <div class="section__texts">
+          <h2 class="subtitle"> <span class="title__whatsapp">Conecta</span> y Crece</h2>
+          <p class="section__paragraph"> Fomenta conversaciones significativas con tus amigos y familiares, construye una comunidad fuerte y leal. Piensa en las valiosas interacciones que podrías tener con tus contactos utilizando una aplicación de mensajes instantáneos.</p>
+        </div>
+      </div>
+      
+    </section>
+    
+    
+    <section class="section section--white">
+      <div class="section__container section__container--inverse container">
+        <figure class="section__picture">
+          <img src="{% static 'images/team-presentation-monochromatic-0304d.svg' %}" alt="imagen" class="section__img">
+        </figure>
+        <div class="section__texts">
+          <h2 class="subtitle"> <span class="title__whatsapp">Comunicación</span> sin Límites</h2>
+          <p class="section__paragraph"> Envía mensajes de texto, imágenes, videos, documentos y realiza llamadas de voz y video de forma gratuita a través de Internet.</p>
+        </div>
+      </div>
+    <div class="wave wave--top"></div>
+    <div class="wave wave--bottom"></div>
+
+    </section>
+
+    <section class="section">
+      <div class="section__container container">
+        <figure class="section__picture">
+          <img src="{% static 'images/mobile-testing-monochromatic.svg' %}" alt="imagen" class="section__img">
+        </figure>
+        <div class="section__texts">
+          <h2 class="subtitle">Crea Grandes <span class="title__whatsapp">Comunidades</span></h2>
+          <p class="section__paragraph">
+            Puedes usar estados de texto y multimedia, crear y participar en chats grupales, y la opción de realizar llamadas de voz y video individuales o grupales.<p>
+        </div>
+      </div>
+
+      <section class="section__questions container">
+        <h1 class="titulo">Respuestas A Preguntas</h1>
+        <div class="categorias" id="categorias">
+          
+          <div class="categoria" data-categoria="entregas">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M7 24h-5v-9h5v1.735c.638-.198 1.322-.495 1.765-.689.642-.28 1.259-.417 1.887-.417 1.214 0 2.205.499 4.303 1.205.64.214 1.076.716 1.175 1.306 1.124-.863 2.92-2.257 2.937-2.27.357-.284.773-.434 1.2-.434.952 0 1.751.763 1.751 1.708 0 .49-.219.977-.627 1.356-1.378 1.28-2.445 2.233-3.387 3.074-.56.501-1.066.952-1.548 1.393-.749.687-1.518 1.006-2.421 1.006-.405 0-.832-.065-1.308-.2-2.773-.783-4.484-1.036-5.727-1.105v1.332zm-1-8h-3v7h3v-7zm1 5.664c2.092.118 4.405.696 5.999 1.147.817.231 1.761.354 2.782-.581 1.279-1.172 2.722-2.413 4.929-4.463.824-.765-.178-1.783-1.022-1.113 0 0-2.961 2.299-3.689 2.843-.379.285-.695.519-1.148.519-.107 0-.223-.013-.349-.042-.655-.151-1.883-.425-2.755-.701-.575-.183-.371-.993.268-.858.447.093 1.594.35 2.201.52 1.017.281 1.276-.867.422-1.152-.562-.19-.537-.198-1.889-.665-1.301-.451-2.214-.753-3.585-.156-.639.278-1.432.616-2.164.814v3.888zm3.79-19.913l3.21-1.751 7 3.86v7.677l-7 3.735-7-3.735v-7.719l3.784-2.064.002-.005.004.002zm2.71 6.015l-5.5-2.864v6.035l5.5 2.935v-6.106zm1 .001v6.105l5.5-2.935v-6l-5.5 2.83zm1.77-2.035l-5.47-2.848-2.202 1.202 5.404 2.813 2.268-1.167zm-4.412-3.425l5.501 2.864 2.042-1.051-5.404-2.979-2.139 1.166z"/></svg>
+            <p>Importancia</p>
+            
+          </div>
+          <div class="categoria" data-categoria="seguridad">
+            <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/></svg>
+            <p>Mejoras</p>
+          </div>
+        
+        </div>
+    
+        <div class="preguntas">
+          <!-- Preguntas Importancia-->
+          <div class="contenedor-preguntas activo" data-categoria="entregas">
+            <div class="contenedor-pregunta">
+              <p class="pregunta">¿Qué hace la aplicación? <img src="{% static 'images/suma.svg' %}" alt="Abrir Respuesta" /></p>
+              <p class="respuesta">Básicamente es una aplicación de mensajería instantánea que permite a los usuarios enviar mensajes de texto, realizar llamadas de voz y video, compartir archivos multimedia como fotos y videos, y crear grupos de chat.</p>
+            </div>
+            <div class="contenedor-pregunta">
+              <p class="pregunta">¿Por qué considera que ha sido tan importante para la humanidad? <img src="{% static 'images/suma.svg' %}" alt="Abrir Respuesta" /></p>
+              <p class="respuesta">La importancia de esta aplicación radica en la manera fácil y rápida en la nos podemos comunicar con ella. <br>
+                Hoy en día damos por sentado enviar mensajes de manera instantánea a cualquier parte del mundo, pero hace un par de décadas era realmente un dolor de cabeza, era un momento en el que este tipo de aplicaciones no existían en la forma en la que la conocemos actualmente. Nuestros antepasados quedarían impresionados con la forma en la que nos comunicamos en la actualidad. Las cartas por correos, telegramas o señales de humo han quedado en el pasado gracias a este tipo de servicios, enviar un mensaje hace dos décadas era un proceso incómodo y costoso. Con la llegada de Whatsapp llegó el declive de los sms (mensajes de texto). <br>
+                El verdadero éxito de Whatsapp fue la adopción generalizada como medio de comunicación favorito, ya que los mensajes se envían a través de la conexión a internet lo que lo convirtió en una opción económica para comunicarnos, además de que la aplicación prioriza la simplicidad y la facilidad de uso, eliminando características innecesarias que complicaban la experiencia del usuario, esto permitió que lo usaran personas del todas las edades y niveles de habilidad tecnológica. Otro de los atractivos de Whatsapp fue la privacidad y seguridad, implementó el cifrado de extremo a extremo en todas las conversaciones. Además de esto se adaptó rápidamente a múltiples plataformas móviles lo que ha garantizado una conexión global, permitiendo que las personas se comuniquen rápida y fácilmente en cualquier parte del mundo. <br>
+                La importancia de Whatsapp no solo se ha visto en nuestra forma de comunicarnos también se ha visto demostrada en los negocios, se ha convertido en una herramienta importante para muchas empresas ya que permite la comunicación directa con los clientes, la promoción de productos y servicios, y la gestión de equipos de trabajo de manera eficiente.
+                </p>
+            </div>
+          </div>
+    
+          <!-- Preguntas Mejoras -->
+          <div class="contenedor-preguntas" data-categoria="seguridad">
+            <div class="contenedor-pregunta">
+              <p class="pregunta">¿Qué cambios o mejoras le harías?<img src="{% static 'images/suma.svg' %}" alt="Abrir Respuesta" /></p>
+              <p class="respuesta">Whatsapp debe seguir mejorando su seguridad y privacidad, ya que debe continuar protegiendo de una manera más optima los datos personales de los usuarios y prevenir el uso indebido de la plataforma.
+                Debe seguir mejorando la calidad de las llamadas y videollamadas ya que hay mejores opciones para hacer reuniones de manera virtual, debe mejorar la gestión de grupos como por ejemplos la programación de mensajes a una hora determinada, una mejor organización de los chats grupales, y agregar recordatorios y listas de tarea dentro de la aplicación.
+                Además de esto desarrollar funciones de accesibilidad para personas discapacitadas.
+                Otra funcionalidad a mencionar sería poder traducir en tiempo real diferentes idiomas para poder comunicarnos sin limitación con personas de cualquier parte del mundo.
+                </p>
+            </div>
+            <div class="contenedor-pregunta">
+              <p class="pregunta">¿Por qué le harías esos cambios? <img src="{% static 'images/suma.svg' %}" alt="Abrir Respuesta" /></p>
+              <p class="respuesta">Haría estos cambios pensando en la importancia de las necesidades específicas de los usuarios ya que la seguridad, privacidad y accesibilidad son aspectos importantes en nuestro nuevo mundo digital. Si Whatsapp no continua mejorando sus competidores lo harán y dejará de ser una de las app más usadas a nivel mundial y terminará como sus antecesores. </p>
+            </div>
+          </div>
+    
+        </div>
+      </section>
+     
+    </section>
+
+ 
+   
+    <section class="question ">
+      <div class="question__texts container">
+        <h2 class="subtitle"> ¿Quieres Usar Whatsapp Web?</h2>
+        <a href="https://web.whatsapp.com/" class="cta" target="_blank"> Pruébalo gratis aquí </a>
+      </div>
+      <div class="wave wave--top"></div>
+      <!-- <div class="wave wave--bottom"></div> -->
+    </section>
+  </main>
+
+  
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <section class="footer__newsletter">
+        <img src="{% static 'images/chat-flatline.svg' %}" alt="footer imagen" class="footer__chat">
+      </section> 
+
+      <section class="footer__content">
+        <a href="http://https://www.whatsapp.com/" target="_blank" class="footer__linkWhatsapp">
+          <img src="{% static 'images/bxl-whatsapp.svg' %}" alt="logo" class="footer__logo"><span class="footer__whatsapp">WhatsApp</span>
+        </a>
+        
+        <p class="footer__paragraph"> La app de mensajería más usada en el mundo, con mensajes cifrados de extremo a extremo.</p>
+        
+        <div class="footer__contact">
+          <img src="{% static 'images/icon-phone.svg' %}" alt="imagen" class="footer__img">
+          
+        </div>
+        <div class="footer__contact footer__contact--email">
+          <img src="{% static 'images/icon-email.svg' %}" alt="imagen" class="footer__img">
+          
+        </div>
+
+        <div class="footer__social">
+          <a href="#" class="footer__link">
+            <img src="{% static 'images/fb.svg' %}" class="footer__icon" alt="facebook">
+            
+          </a>
+
+          <a href="#" class="footer__link">
+            <img src="{% static 'images/instagram.svg' %}" class="footer__icon" alt="facebook">
+          </a>
+
+          <a href="#" class="footer__link">
+            <img src="{% static 'images/twitter.svg' %}" class="footer__icon" alt="facebook">
+          </a>
+        </div>
+      </section>
+   
+    </div>
+    <div class="footer__final">
+      <p class="footer__finalParagraph">Web realizada para uso personal, se utiliza únicamente con fines de práctica y aprendizaje. Todos los derechos de autor pertenecen a sus respectivos propietarios</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+573137613879" class="btn-whatsapp" target="_blank">
+    <img src="{% static 'images/bxl-whatsapp.svg' %}" alt="boton whatsapp" class="img__whatsapp">
+  </a>
+  <!--  -->
+  
+  <!--
+
+ 
+
+2000m+
+  
+
+
+  
+
+ 
+
+
+ 
+  
+ 
+ 
+
+ 
+  
+
+  Subscribe -->
+
+<script src="{% static 'js/index-min.js' %}"></script>
+<script src="{% static 'js/categorias-min.js' %}"></script>
+<script src="{% static 'js/preguntasFrecuentes.js' %}"></script>
+</body>
+</html>

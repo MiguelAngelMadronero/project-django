@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5 mb-5">
+            <h1 class="text-secondary">{{contact.nombre}}</h1>
+            {{error}}
+            <!-- <p>{{contact.user.username}}</p> -->
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                
+                
+                <button class="btn btn-primary">Actualizar</button>
+            </form>
+
+           <div class="d-flex mt-3">
+            <form action="{% url 'complete_contact' contact.id %}" method="POST" class="me-3">
+                {% csrf_token %}
+
+                <button class="btn btn-success">Favorito</button>
+
+            </form>
+
+            <form action="{% url 'delete_contact' contact.id %}" method="POST">
+                {% csrf_token %}
+
+                <button class="btn btn-danger">Eliminar</button>
+
+            </form>
+           </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

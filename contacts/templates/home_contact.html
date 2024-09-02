@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">App de contactos</h1>
+        <p class="text-center">En esta aplicación no oficial de whatsapp podrás agregar contactos y verlos en tu lista de contactos agregados, podrás modificarlo, eliminarlo o agregarlo como favorito. Agregandolo como favorito podrás verlo en la página de contactos favoritos </p>
+        {% if user.is_authenticated %}
+        <div class="text-center">
+            <a class="btn" href="/logout"  style="background-color: #075E54; color: white;">
+                Finalizar sesión
+            </a>
+            
+        </div>
+        {% else %}
+        <div class="text-center">
+            <a class="btn" href="/signin/"  style="background-color: #075E54; color: white;">
+                Acceder
+            </a>
+            <a class="btn btn-secondary" href="/signup/">
+                Registrarse
+            </a>
+        </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}
+
